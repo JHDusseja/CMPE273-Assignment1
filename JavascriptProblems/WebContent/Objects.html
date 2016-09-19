@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Objects</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+	function Employee(fname, lname, age, salary){
+		this.fname = fname;
+		this.lname = lname;
+		this.age = age;
+		this.salary = salary;
+	}
+	
+	employeeOne = new Employee("Jayesh","Dusseja",26,10000000);
+	employeeTwo = new Employee("Ajay","Dsouza",40,500000);
+	employeeThree = new Employee("Vijay","Verma",50,4000);
+	
+	employees = [employeeOne, employeeTwo, employeeThree];
+	var max = employees[0];
+	for(i=1;i<employees.length;i++){
+		if(employees[i].salary > max.salary)
+			max = employees[i];
+	}
+	
+	var text = "";
+	
+	text += "All Employees: <br/><br/>";
+	
+	text += "<table border=1px cellpadding=5px cellspacing=5px> <tr> <td>FirstName </td><td> LastName </td><td> Age </td><td> Salary</td></tr>";
+	for(i=0;i<employees.length;i++){
+		text += "<tr> <td>" + employees[i].fname + "</td><td>" + employees[i].lname + "</td><td>" + employees[i].age + "</td><td>" + employees[i].salary + "</td></tr>";
+	}
+	text += "</table><br/>";
+	text += "<br/> Employee with maximum salary is " + max.fname + " having salary = " + max.salary + " USD";
+	document.getElementById("result").innerHTML = text; 
+</script>
+</body>
+</html>

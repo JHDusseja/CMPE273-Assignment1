@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript JSON</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+
+	var studentsObj = '{"students":[{"Name":"Jayesh","Marks":100}' +
+								',{"Name":"Bhavesh","Marks":68}' +
+								',{"Name":"Vinit","Marks":72}' +
+								',{"Name":"Ajay","Marks":89}' +
+								',{"Name":"Vijay","Marks":50}]}';
+	
+	var studentsJsonObj = JSON.parse(studentsObj);
+	var max = 0;
+	
+	var output = "All Students: <br/><br/><table border=1px cellpadding=10px cellspacing=5px>";
+	output += "<tr><td>" + studentsJsonObj.students[0].Name + "</td><td>" + studentsJsonObj.students[0].Marks + "</td></tr>";
+	
+	for(i=1;i<studentsJsonObj.students.length;i++){
+		output += "<tr><td>" + studentsJsonObj.students[i].Name + "</td><td>" + studentsJsonObj.students[i].Marks + "</td></tr>";
+		if(studentsJsonObj.students[i].Marks > studentsJsonObj.students[max].Marks)
+			max = i;
+	}
+	
+	output += "</table><br/>The Student with highest marks is : " + studentsJsonObj.students[max].Name + " having " + studentsJsonObj.students[max].Marks + " marks.";
+	document.getElementById("result").innerHTML = output;
+</script>
+</body>
+</html>

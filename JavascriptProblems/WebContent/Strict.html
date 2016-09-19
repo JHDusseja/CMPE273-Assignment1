@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Strict Mode</title>
+</head>
+<body>
+<p>Enter a number to check if it is divisible by 2:</p>
+<input type="number" id="userInput" />
+<button id="checkDivisibility" onclick="fnz()">Check divisibility by 2</button>
+<script>
+	function fnz(){
+		"use strict";
+		try{
+			x = (document.getElementById("userInput").value);
+			alert(x % 2 == 0);
+		}
+		catch(err){
+			alert(err);
+		}
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>HTML5 Input Types</title>
+<style>
+table {
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+th, td {
+    padding: 10px;
+}
+</style>
+</head>
+<body>
+Please Enter your details below: <br/><br/>
+<form action="#">
+<table>
+	<tr>
+		<td>First Name</td>
+		<td><input type="text" id="fname" pattern="[A-Za-z]*" required autofocus/></td>
+	</tr>
+	<tr>
+		<td>Last Name</td>
+		<td><input type="text" id="lname" pattern="[A-Za-z]*" required/></td>
+	</tr>
+	<tr>
+		<td>Mobile</td>
+		<td><input type="number" id="mobile" min=1000000000 max=9999999999 required/></td>
+	</tr>
+	<tr>
+		<td>Email</td>
+		<td><input type="Email" id="email" required/></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center"><input type="submit" id="submitBtn" value="Submit" /></td>
+	</tr>
+</table>
+</form>
+</body>
+</html>

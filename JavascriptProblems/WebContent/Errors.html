@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Errors</title>
+</head>
+<body>
+<p> Enter a String to verify if it is palindrome: </p>
+<input type="text" id="userInput" placeholder="Enter String" />
+<button id="verifyBtn" onclick="isPalindrome(document.getElementById('userInput').value)">Verify String</button>
+<script>
+	function isPalindrome(str) {
+		try {
+ 			if(str != str.split('').reverse().join(''))
+ 				throw "String is not a Palindrome";
+ 			else
+ 				throw "String is a Palindrome";
+ 		}
+ 		catch(err)	{
+ 			alert(err);
+ 		}
+}
+</script>
+</body>
+</html>

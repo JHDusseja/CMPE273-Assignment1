@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Functions</title>
+</head>
+<body>
+<input type="text" id="userInput" placeholder="Enter a Number"></input>
+<button type="button" id="factorialBtn" onclick="BtnClick()">Calculate Factorial</button>
+<p id="result"></p>
+<script>
+	function factorial(x){
+		if(x<0)
+			return 0;
+		if(x==0)
+			return 1;
+		else
+			return x * factorial(x-1);
+	}
+	function BtnClick(){
+		var num = document.getElementById("userInput").value;
+		if(!isNaN(num))
+			var output = "Factorial of " + num + " is " + factorial(num);
+		else
+			var output = "Please Enter a valid Number";
+		document.getElementById("result").innerHTML = output;
+	}
+</script>
+</body>
+</html>

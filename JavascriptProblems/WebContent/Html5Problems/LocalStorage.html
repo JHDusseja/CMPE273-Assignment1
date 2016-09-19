@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>HTML5 Local Storage</title>
+</head>
+<body>
+<div id="userInput" style="display:none">
+	First Time User, Please Enter Your Name: <br/>
+	<input type="text" id="userName" placeholder="Enter your name" />
+	<button id="submitName" onclick='setUsername(document.getElementById("userName").value)' >Submit</button>
+</div>
+<p id="result"></p>
+<script>
+	// Check browser support
+	if (typeof(Storage) !== "undefined") {
+	    if( localStorage.getItem("myusername") === null )
+	    	document.getElementById("userInput").style = "display:block";
+	    else
+	    	document.getElementById("result").innerHTML = "Welcome Back " + localStorage.getItem("myusername");
+	}
+	else {
+	    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+	}
+	
+	function setUsername(val){
+		localStorage.setItem("myusername", val);
+		document.getElementById("userInput").style = "display:none";
+		document.getElementById("result").innerHTML = "Welcome " + localStorage.getItem("myusername");
+	}
+</script>
+</body>
+</html>

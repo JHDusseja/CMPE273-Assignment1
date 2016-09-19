@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Regular Expressions</title>
+</head>
+<body>
+<p>Enter Your Phone Number: (e.g. 408-207-8708):</p>
+<input type="text" id="userInput" placeholder="Enter your Phone#" />
+<button style="margin-left:1em;" onclick="checkNumber(document.getElementById('userInput'))">Check Number</button>
+<script>
+      var phoneRegEx = /^(?:\d{3}|\(\d{3}\))-\d{3}-\d{4}$/;
+      function checkNumber(UserInput){  
+        var output = phoneRegEx.exec(UserInput.value);  
+        if (!output)
+          alert("Enter a Valid Phone Number");  
+        else
+          alert("Your Phone Number is fine " + output[0]);  
+      }  
+</script>
+</body>
+</html>

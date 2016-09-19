@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="mycode.js"></script>
+</head>
+<body>
+<script>
+	test(4,5);
+	var newobj = new test(5,5);
+	alert(newobj.value1);
+	alert(window.value1);
+	
+	function foo(a,b){
+	    alert(a);
+	    alert(b);
+	    alert(this);
+	}
+	var args = ['ah','be'];
+	//foo.apply('omg',args);
+	
+	function Employee(fname, lname, age, salary){
+		this.fname = fname;
+		this.lname = lname;
+		this.age = age;
+		this.salary = salary;
+	}
+	
+	employeeOne = new Employee("Jayesh","Dusseja",26,10000000);
+	employeeTwo = new Employee("Ajay","Dsouza",40,500000);
+	employeeThree = new Employee("Vijay","Verma",50,4000);
+	employeeOne.varOne = "testVar";
+	document.write(employeeTwo.hasOwnProperty('lname'));
+	
+</script>
+</body>
+</html>

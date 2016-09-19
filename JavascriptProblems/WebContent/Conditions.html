@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Conditions</title>
+</head>
+<body>
+<p>Enter Marks:</p>
+<input type="number" id="firstSubject" placeholder="Subject 1 out of 100" />
+<input type="number" id="secondSubject" placeholder="Subject 2 out of 100" />
+<input type="number" id="thirdSubject" placeholder="Subject 3 out of 100" />
+<button id="gradeBtn" onclick="gradeStudent()">Calculate the Grade</button>
+<p id="result"></p>
+<script>
+	function gradeStudent(){
+		var sub1 = document.getElementById("firstSubject").value;
+		var sub2 = document.getElementById("secondSubject").value;
+		var sub3 = document.getElementById("thirdSubject").value;
+		if(sub1.trim().length === 0 || sub2.trim().length === 0 || sub3.trim().length === 0 || sub1 > 100 || sub1 < 0 || sub2 > 100 || sub2 < 0 || sub3 > 100 || sub3 < 0)
+			alert("Please Enter Valid Marks!");
+		else{
+			var total = Number(sub1) + Number(sub2) + Number(sub3);
+			var percentage = total / 300 * 100;
+			if(percentage > 95)
+				document.getElementById("result").innerHTML = "Congratulations! You got A Grade.";
+			else if(percentage > 80)
+				document.getElementById("result").innerHTML = "You got B Grade.";
+			else
+				document.getElementById("result").innerHTML = "You Failed. Better Luck Next Time.";
+		}
+	}
+</script>
+</body>
+</html>

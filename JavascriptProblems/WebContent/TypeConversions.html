@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Type Conversions</title>
+</head>
+<body>
+<p>Please Enter the amount in USD to convert into INR (1USD = 67.08INR):</p>
+<input type="number" id="usCurrency" placeholder="Enter USD" onchange="calcINR(this.value)"/>
+<input type="text" id="inrCurrency" placeholder="INR" disabled/>
+<script>
+	function calcINR(usdValue){
+		var usd = Number(usdValue);
+		var inr = usd * 67.08;
+		document.getElementById("inrCurrency").value = String(inr);
+	}
+</script>
+</body>
+</html>

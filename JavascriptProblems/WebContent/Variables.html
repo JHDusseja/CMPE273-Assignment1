@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Variables</title>
+</head>
+<body>
+<p>Enter a String to reverse: </p>
+<input type="text" id="userString" placeholder="Enter a String"></input>
+<button type="button" id="reverseBtn" onclick="BtnClick()">Reverse String</button>
+<p id="result"></p>
+<script>
+	function BtnClick(){
+		var originalString = document.getElementById("userString").value;
+		var reverseString = originalString.split('').reverse().join('');
+		document.getElementById("result").innerHTML = "Original String = " + originalString;
+		document.getElementById("result").innerHTML += "<br>Reversed String = " + reverseString;
+	}
+</script>
+</body>
+</html>

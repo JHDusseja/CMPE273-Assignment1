@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Arrays</title>
+</head>
+<body>
+<p>Enter 5 Array Elements :</p>
+<input type="text" id="firstElement" placeholder="Enter a Number"></input>
+<input type="text" id="secondElement" placeholder="Enter a Number"></input>
+<input type="text" id="thirdElement" placeholder="Enter a Number"></input>
+<input type="text" id="fourthElement" placeholder="Enter a Number"></input>
+<input type="text" id="fifthElement" placeholder="Enter a Number"></input>
+<button id="sortBtn" onclick="sortArray()">Sort The Array</button>
+<p id="result"></p>
+<script>
+
+function sortArray(){
+	var num1 = document.getElementById("firstElement").value;
+	var num2 = document.getElementById("secondElement").value;
+	var num3 = document.getElementById("thirdElement").value;
+	var num4 = document.getElementById("fourthElement").value;
+	var num5 = document.getElementById("fifthElement").value;
+	
+	var output = "";
+	
+	if(isNaN(num1) || num1.trim().length===0 || isNaN(num2) || num2.trim().length===0 ||isNaN(num3) || num3.trim().length===0 ||isNaN(num4) || num4.trim().length===0 ||isNaN(num5) || num5.trim().length===0)
+		output = "Please Enter a valid Number";
+	else {
+		var numArray = [num1,num2,num3,num4,num5];
+		output = "Array Before Sorting : " + numArray;
+		numArray.sort(function(a,b){return a-b;});
+		output += "<br/> Array After Sorting : " + numArray;
+	}
+	document.getElementById("result").innerHTML = output;
+}
+</script>
+</body>
+</html>

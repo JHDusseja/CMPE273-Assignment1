@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Inheritance</title>
+</head>
+<body>
+<p>Enter Side of a Square or radius of a Circle:</p>
+<input type="text" id="userInputColor" placeholder="Enter Color"/>
+<input type="number" id="userInputSide" placeholder="Enter Side or Radius"/>
+<button id="squareBtn" onclick="calcSquare()">Calculate Perimeter of a Square</button>
+<button id="circleBtn" onclick="calcCircle()">Calculate Perimeter of a Circle</button>
+<p id="result"></p>
+<script>
+	function Shape(){
+		this.color;
+		this.perimeter = function(side){
+			return "General Shape class can't determine perimeter";
+		}
+	}
+	
+	function Square(){
+		this.perimeter = function(side){
+			return (side * 4);
+		}
+	}
+	Square.prototype = new Shape();
+	
+	function Circle(){
+		this.perimeter = function(side){
+			return (2 * Math.PI * side);
+		}
+	}
+	Circle.prototype = new Shape();
+	
+	function calcSquare(){
+		var userColor = document.getElementById("userInputColor").value;
+		var userSide = document.getElementById("userInputSide").value;
+		
+		mySquare = new Square();
+		mySquare.color = userColor;
+		var myPerimeter = mySquare.perimeter(userSide);
+		
+		document.getElementById("result").innerHTML = "I am a " + mySquare.color + " Square with Perimeter of " + myPerimeter;
+	}
+	
+	function calcCircle(){
+		var userColor = document.getElementById("userInputColor").value;
+		var userSide = document.getElementById("userInputSide").value;
+		
+		myCircle = new Circle();
+		myCircle.color = userColor;
+		var myPerimeter = myCircle.perimeter(userSide);
+		
+		document.getElementById("result").innerHTML = "I am a " + myCircle.color + " Cirlce with Circumference of " + myPerimeter;
+		
+	}
+</script>
+</body>
+</html>

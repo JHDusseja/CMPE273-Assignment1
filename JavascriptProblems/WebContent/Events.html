@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Events</title>
+</head>
+<body>
+<input type="text" id="userInput" placeholder="Enter a Number"></input>
+<button id="sqrtBtn" onclick="calculateSqrt()">Calculate Square Root</button>
+<p id="result"></p>
+<script>
+function calculateSqrt(){
+	var num = document.getElementById("userInput").value;
+		if(isNaN(num) || num.trim().length===0)
+			var output = "Please Enter a valid Number";
+		else
+			var output = "Square root of " + num + " is " + Math.sqrt(num);
+		document.getElementById("result").innerHTML = output;
+}
+</script>
+</body>
+</html>
